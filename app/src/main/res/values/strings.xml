@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Patient Data</string>
+    <string name="action_settings">Settings</string>
+    <string name="add_symbol">+</string>
+    <string name="remarks">Enter remarks about the session</string>
+    <string name="title_activity_view">ViewActivity</string>
+    <string name="title_activity_edit">EditActivity</string>
+    <string name="title_activity_temporarytrial">temporarytrial</string>
+</resources>

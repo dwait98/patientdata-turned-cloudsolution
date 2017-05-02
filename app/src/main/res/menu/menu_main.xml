@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="dwaittrials.com.patientdata2.MainActivity">
+
+    <item android:id="@+id/send_file"
+        android:title="Send file"
+        app:showAsAction="never"/>
+
+</menu>
