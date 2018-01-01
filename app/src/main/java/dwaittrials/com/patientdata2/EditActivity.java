@@ -52,7 +52,15 @@ public class EditActivity extends AppCompatActivity {
         Bundle fromMain = getIntent().getExtras();
         editSessionIndex = fromMain.getInt("editSessionIndex");
 
-/* Switch to file receive screen on pressing the receive file button */
+/* Switch to different  screen on pressing the receive file or receive from pi3 button */
+
+        Button receiveDataButton = (Button) findViewById(R.id.dataReceiver);
+        receiveDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(EditActivity.this, DataReceiver.class));
+            }
+        });
 
         Button shareAppButton = (Button) findViewById(R.id.fileShareApp);
         shareAppButton.setOnClickListener(new View.OnClickListener(){
@@ -63,6 +71,7 @@ public class EditActivity extends AppCompatActivity {
                 startActivity(toFileShareApp);
             }
         });
+
 
 /* Set text according to whether a file was received for this session */
 
@@ -249,7 +258,6 @@ public class EditActivity extends AppCompatActivity {
     @TargetApi(Build.VERSION_CODES.KITKAT)
     class postData extends AsyncTask<Object, Object, Void> {
 
-        public final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
         String url = "http://mlceeri.pythonanywhere.com/new-session/";
 
@@ -262,6 +270,7 @@ public class EditActivity extends AppCompatActivity {
             bloodFile = new File(bloodFileName);
             this.remarks = remarks;
             sharedFile = new File(sharedFileName);
+
         }
 
         @Override
@@ -274,7 +283,7 @@ public class EditActivity extends AppCompatActivity {
                     .setType(MultipartBody.FORM)
                     .addFormDataPart("remarks",remarks)
                     .addFormDataPart("session_name",format.format(MainActivity.datesOfSessions.get(editSessionIndex).getTime()))
-                    .addFormDataPart("patient_id","01");
+                    .addFormDataPart("patient_id", "03");
 
             if (xrayFile.exists()){
                 formBodyBuilder.addFormDataPart("xray", xrayFile.getName(),

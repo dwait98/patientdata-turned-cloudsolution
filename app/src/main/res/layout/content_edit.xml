@@ -107,20 +107,35 @@
 
         </android.support.v7.widget.CardView>
 
-        <Button
-            android:id = "@+id/fileShareApp"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="10dp"
-            android:text="Receive file"/>
+            android:text="File received earlier:"
+            android:textAllCaps="true"
+            android:layout_margin="14dp" />
 
         <TextView
             android:id="@+id/shared_file_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
             android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/dataReceiver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="Receive data from pi3" />
+
+        <Button
+            android:id="@+id/fileShareApp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="Receive file from another phone" />
 
 
     </LinearLayout>
